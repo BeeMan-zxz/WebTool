@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+            body{
+                margin: 0;
+                padding: 0;
+                color: #ffeaa7;
+                font-size: 16px;
+                font-family: sans-serif;
+                background: #636e72;
+            }
+            .box{
+    
+                width: 500px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                background: #2d3436;
+                text-align: center;
+                border-radius: 5px;
+            }
+            .box input.text{
+                width: 200px;
+                display: block;
+                border: 0;
+                border: 2px solid #55efc4;
+                background: #2d3436;
+                border-radius: 24px;
+                margin: 40px auto;
+                padding: 10px 40px;
+                transition: 0.25s;
+                color: #ecf0f1;
+            }
+            .box input.text:focus{
+                width: 300px;
+                /* border: 0; */
+                outline: none;
+                color: #ecf0f1;
+            }
+    
+            .box input.submit{
+                width: 120px;
+                display: block;
+                border: 0;
+                border: 2px solid #55efc4;
+                background: #2d3436;
+                border-radius: 24px;
+                margin: 20px auto;
+                padding: 10px 40px;
+                transition: 0.25s;
+                color: #ffeaa7;
+            }
+            .box input.submit:hover{
+                background: #55efc4;
+                color: #e84393;
+            }
+            .box input.submit:focus{
+                outline: none;
+            }
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function()
+        {
+            var oArr=document.getElementById("text").value;
+            var oInput=document.getElementsByTagName("input")[0];
+            var oBt=document.getElementsByClassName("submit")[0];
+            
+
+            oInput.onkeyup=function()
+            {
+                //this.value=this.value.replace("/[^(/d)|(,)]/","");
+                this.value = this.value.replace(/[^(\d)|(,)]/,"");
+            }
+
+
+            //冒泡排序 从小到大
+            // var sort=function(Arr)
+            // {
+            //     var temp;
+
+            //     for(var i=0;i<Arr.length;i++)
+            //     {
+            //         for(var j=i+1;j<Arr.length;j++)
+            //         {
+            //             if(Arr[i]>Arr[j])
+            //             {
+            //                 temp=Arr[i];
+            //                 Arr[i]=Arr[j];
+            //                 Arr[j]=temp;
+            //             }
+            //         }
+            //     }
+            //    return Arr;
+            // }
+
+            //快速排序
+            function quickSort(arr) {
+            /*
+                * 创建len保存数组的长度，每次获取数组的长度都要实时查询不利于性能；
+                * index作为保存取到的中间值；
+                * pivot保存比较参照物；
+                * left、right作为子数组的容器；
+                */
+                var len = arr.length,
+                    index,
+                    pivot,
+                    left=[],
+                    right=[];
+                // 如果数组只有一位，就直接返回数组,递归的终止条件；
+                if (len <= 1) return arr;
+
+                //获取中间值的索引，使用Math.floor向下取整；
+                index = Math.floor(len / 2);
+
+                // 使用splice截取中间值，第一个参数为截取的索引，第二个参数为截取的长度；
+                // 如果此处使用pivot=arr[index]; 那么将会出现无限递归的错误；
+                // splice影响原数组，原数组长度减一；
+                pivot = arr.splice(index, 1);
+                len -= 1;
+
+                // 小于arr[pivot]的存到left数组里，大于arr[pivot]的存到right数组；
+                for (var i = 0; i < len; i++) {
+                    if (pivot > arr[i]) {
+                        left.push(arr[i]);
+                    } else {
+                        right.push(arr[i]);
+                    }
+                }
+            // 不断把分割的左右子数组传入quickSort，直到分割的只有一位直接返回子数组本身，递归终止；
+            
+            // 把每次分割的数组一层一层的用concat连接起来；
+            // 每一层left里的元素都小于对应的pivot,right里的元素都大于对应的pivot；
+            return quickSort(left).concat(pivot, quickSort(right));
+        }
+
+
+            oBt.onclick=function()
+            {
+                
+                oInput.value=quickSort(oInput.value.split(","));
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <input id="text" class="text" type="text" placeholder="请输入数字以半角英文逗号分割...">
+        <input class="submit" type="button" value="排序">
+    </div>
+
+</body>
+</html>
