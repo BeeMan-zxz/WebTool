@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,
+        input {
+            margin: 0;
+            padding: 0;
+            font: 12px/1.5 arial;
+        }
+        
+        .box {
+            width: 300px;
+            margin: 0 auto;
+        }
+        
+        input {
+            width: 60px;
+        }
+    </style>
+    <script>
+        window.onlaod = function() {
+            var oInput = document.getElementsByTagName("input");
+            var oNum = document.getElementById("sum");
+            var oBt = document.getElementsByTagName("button");
+            for (var i = 0; i < oInput.length; i++) {
+                oInput.onkeyup = function() {
+                    this.value = oInput[i].value.replace(/[^\d]/, "")
+                }
+            }
+            oBt.onclick = function() {
+                (oInput[0].value == "" || oInput[1].value == "") ? alert("请输入数字!"): oNum.innerHTML = parseint(oInput[0].value) + parseInt(oInput[1].value);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text"> &nbsp
+        <strong>+</strong>&nbsp
+        <input type="text"> &nbsp
+        <strong>=</strong> &nbsp
+        <span id="sum">?</span> &nbsp
+        <button> 求和</button>
+    </div>
+</body>
+
+</html>

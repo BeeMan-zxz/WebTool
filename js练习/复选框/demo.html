@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body,
+        dl,
+        dd,
+        dt {
+            margin: 0;
+            padding: 0;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: brown;
+        }
+        
+        body {
+            font-family: Tahoma;
+            font-size: 12px;
+        }
+        
+        dl {
+            width: 120px;
+            margin: 0 auto;
+            margin-top: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background: #fafafa;
+            margin-bottom: 10px;
+        }
+        
+        dt {
+            border-bottom: 1px solid black;
+            padding-bottom: 10px;
+        }
+        
+        dd,
+        dt {
+            margin: 10px;
+        }
+        
+        label {
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var oAll = document.getElementsByTagName("input");
+            var oA = document.getElementsByTagName("a")[0];
+            var oLable = document.getElementsByTagName("label")[0];
+            //判断是不是全选 如果是就改变总开关名称
+            var isCheckAll = function() {
+                    for (var i = 1, n = 0; i < oAll.length; i++) {
+                        oAll[i].checked && n++;
+                    }
+                    oAll[0].checked = n == oAll.length - 1;
+                    oLable.innerHTML = oAll[0].checked ? "全不选" : "全选";
+                }
+                //全部选或者不选
+            oAll[0].onclick = function() {
+                    for (var i = 1; i < oAll.length; i++) {
+                        oAll[i].checked = oAll[0].checked;
+                    }
+                    isCheckAll();
+                }
+                //反选
+            oA.onclick = function() {
+                for (var i = 1; i < oAll.length; i++) {
+                    oAll[i].checked = !oAll[i].checked;
+                }
+                isCheckAll();
+            }
+            for (var i = 1; i < oAll.length; i++) {
+                oAll[i].onclick = function() {
+                    isCheckAll();
+                }
+            }
+        }
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <dl>
+        <dt>
+            <input type="checkbox">
+            <label id="all">全选</label>
+            <a href="javascript:;">反选</a>
+        </dt>
+        <dd>
+            <input type="checkbox">
+            <label for="">选项 (一)</label>
+        </dd>
+        <dd>
+            <input type="checkbox">
+            <label for="">选项 (二)</label>
+        </dd>
+        <dd>
+            <input type="checkbox">
+            <label for="">选项 (三)</label>
+        </dd>
+        <dd>
+            <input type="checkbox">
+            <label for="">选项 (四)</label>
+        </dd>
+        <dd>
+            <input type="checkbox">
+            <label for="">选项 (五)</label>
+        </dd>
+        <dd>
+            <input type="checkbox">
+            <label for="">选项 (六)</label>
+        </dd>
+        <dd>
+            <input type="checkbox">
+            <label for="">选项 (七)</label>
+        </dd>
+        <dd>
+            <input type="checkbox">
+            <label for="">选项 (八)</label>
+        </dd>
+        <dd>
+            <input type="checkbox">
+            <label for="">选项 (九)</label>
+        </dd>
+        <dd>
+            <input type="checkbox">
+            <label for="">选项 (十)</label>
+        </dd>
+    </dl>
+    <center>1、切换全选/全不选文字；2、根据选中个数更新全选框状态；</center>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        ul {
+            width: 700px;
+            margin: 0 auto;
+            padding: 0 0 10px 10px;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+        
+        li {
+            float: left;
+            width: 128px;
+            height: 128px;
+            border: 1px solid #ccc;
+            margin: 10px 10px 0 0;
+        }
+        
+        li img {
+            /* float: left; */
+            opacity: 0.3;
+            cursor: crosshair;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var oImgs = document.getElementsByTagName("img");
+            for (var i = 0; i < oImgs.length; i++) {
+                oImgs[i].onmouseenter = function() {
+                    this.style.opacity = 1;
+                };
+                oImgs[i].onmouseout = function() {
+                    this.style.opacity = 0.3;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li><img src="../img/1.jpg" alt=""></li>
+        <li><img src="../img/2.jpg" alt=""></li>
+        <li><img src="../img/3.jpg" alt=""></li>
+        <li><img src="../img/4.jpg" alt=""></li>
+        <li><img src="../img/5.jpg" alt=""></li>
+        <li><img src="../img/6.jpg" alt=""></li>
+        <li><img src="../img/7.jpg" alt=""></li>
+        <li><img src="../img/8.jpg" alt=""></li>
+        <li><img src="../img/9.jpg" alt=""></li>
+        <li><img src="../img/10.jpg" alt=""></li>
+    </ul>
+</body>
+
+</html>

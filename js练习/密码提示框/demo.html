@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            margin: 0 auto;
+        }
+        
+        #tid {
+            height: 40px;
+            width: 300px;
+            border: 1px solid black;
+            background: #d1d167;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var tab = document.getElementsByTagName("lable")[0];
+            var tid = document.getElementById("tid");
+            tab.onmouseover = function() {
+                tid.style.display = "block";
+            };
+            tab.onmouseout = function() {
+                tid.style.display = "none";
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <lable>
+            <input type="checkbox"> 两周内自动登陆
+        </lable>
+        <div id="tid">
+            为了您的安全请不要在公用电脑使用此功能！
+        </div>
+    </div>
+</body>
+
+</html>

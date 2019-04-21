@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            font: 12px/1.5 Tahoma;
+            text-align: center;
+        }
+        
+        input {
+            /* height: 30px; */
+            width: 100px;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        var myHome = function(a, b) {
+            alert(a.value);
+            alert(b.value);
+        }
+        window.onload = function() {
+            var txt1 = document.getElementById("txt1");
+            var txt2 = document.getElementById("txt2");
+            var btn = document.getElementById("btn");
+            btn.onclick = function() {
+                myHome(txt1, txt2);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="contnet">
+        <input id="txt1" type="text" value="北京市">
+        <input id="txt2" type="text" value="朝阳区">
+        <input id=btn type="button" value="传参">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font: 12px/1.5 Tahoma;
+        }
+        
+        .inbox {
+            width: 280px;
+            height: 320px;
+            margin: 0 auto;
+        }
+        
+        input {
+            margin-top: 10px;
+        }
+        
+        #xxx {
+            margin-left: 50px;
+        }
+        
+        .lizi {
+            margin-top: 10px;
+            width: 200px;
+            height: 200px;
+            background: #000;
+            color: #fff;
+        }
+    </style>
+    <script>
+        var setStyle = function(elem, a, b) {
+            elem.style[a] = b;
+        }
+        window.onload = function() {
+
+            var oBt1 = document.getElementById("xxx");
+            var oBt2 = document.getElementById("yyy");
+            var oLi = document.getElementsByClassName("lizi")[0];
+            var oInput = document.getElementById("in");
+            var oSet = document.getElementById("set");
+            oBt1.onclick = function() {
+                setStyle(oLi, oInput.value, oSet.value)
+            };
+            oBt2.onclick = function() {
+                setStyle(oLi, "background", "black")
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <div class="inbox">
+        属性名: <input id="in" type="text" value="background"><br> 属性值:
+        <input id="set" type="text" value="blue"><br>
+        <input id="xxx" type="button" value="确定">
+        <input id="yyy" type="button" value="重置">
+        <div class="lizi">
+            在上方输入框输入"属性名"及"属性值"，点击确定按钮查看效果。
+        </div>
+    </div>
+
+</body>
+
+</html>

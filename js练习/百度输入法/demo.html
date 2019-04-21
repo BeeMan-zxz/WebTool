@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .box,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 70px;
+            margin: 0 auto;
+        }
+        
+        ul {
+            display: none;
+            margin-top: 5px;
+            border: 1px solid steelblue;
+        }
+        
+        li {
+            width: 100%;
+            list-style: none;
+            line-height: 24px;
+        }
+        
+        a {
+            display: block;
+            color: #00c;
+            padding: 0 5px;
+            text-decoration: none;
+        }
+        
+        .close {
+            border-top: 1px solid steelblue;
+        }
+        
+        .show {
+            display: block;
+        }
+        
+        .hide {
+            display: none;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <input type="button" value="输入法">
+        <ul id="xxx" class="hide">
+            <li><a href="javascript:;">手写</a></li>
+            <li><a href="javascript:;">拼音</a></li>
+            <li id="oo"><a class="close" href="javascript:;">关闭</a></li>
+        </ul>
+    </div>
+    <script>
+        window.onload = function() {
+            var oBt = document.getElementsByTagName("input")[0];
+            var oUl = document.getElementById("xxx");
+            var oOo = document.getElementById("oo");
+            oBt.onclick = function() {
+
+                // if (oUl.className == "hide") {
+                //     oUl.className = "show"
+                // } else {
+                //     oUl.className = "hide"
+                // }
+                oUl.className = oUl.className == "hide" ? "show" : "hide";
+            };
+            oOo.onclick = function() {
+                oUl.className = "hide";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        li {
+            list-style: none;
+        }
+
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            font: 12px/1.5 Tahoma;
+            background: #A3C5A8;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            width: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        #color {
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .thiss {
+            background: #fff !important;
+        }
+
+        #color li {
+            height: 6px;
+            width: 6px;
+            border-width: 4px;
+            border-style: solid;
+            float: left;
+            margin-right: 10px;
+            text-indent: -9999px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        #red {
+            background: red;
+            border-color: red;
+        }
+
+        #green {
+            background: Green;
+            border-color: Green;
+        }
+
+        #black {
+            background: black;
+            border-color: black;
+        }
+
+        #nav {
+            border: 1px solid #fff;
+            overflow: hidden;
+        }
+
+        #nav li.last {
+            width: 83px;
+            border-right-width: 0;
+        }
+
+        #nav li a {
+            color: #fff;
+        }
+
+        #nav li {
+            float: left;
+            border-right: 1px solid #fff;
+            width: 82px;
+            line-height: 25px;
+            text-align: center;
+        }
+
+        #nav li.last {
+            width: 83px;
+            border-right-width: 0;
+        }
+    </style>
+    <link href="css/green.css" rel="stylesheet" type="text/css" />
+    <script>
+        window.onload = function() {
+            var oLink = document.getElementsByTagName("link")[0];
+            var lis = document.getElementById("color").getElementsByTagName("li");
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].onclick = function() {
+
+                    for (var p in lis) {
+                        lis[p].className = "";
+                        this.className = "thiss";
+                        oLink['href'] = "css/"+this.id + ".css";
+                    }
+                }
+
+            }
+        }
+    </script>
+</head>
+
+
+<body>
+    <div class="content">
+        <ul id="color">
+            <li id="red" class="" title="红色" class>红</li>
+            <li id="green" class="thiss" title="绿色" class>绿</li>
+            <li id="black" class="" title="黑色" class>黑</li>
+        </ul>
+        <ul id="nav">
+            <li><a href="javascript:;">新闻</a></li>
+            <li><a href="javascript:;">体育</a></li>
+            <li><a href="javascript:;">电影</a></li>
+            <li><a href="javascript:;">音乐</a></li>
+            <li><a href="javascript:;">旅游</a></li>
+            <li class="last"><a href="javascript:;">娱乐</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .outer {
+            width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        #box {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            margin-top: 10px;
+            background: #000;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <input type="button" value="变宽">
+        <input type="button" value="变高">
+        <input type="button" value="变色">
+        <input type="button" value="隐藏">
+        <input type="button" value="重置">
+        <div id="box"></div>
+    </div>
+    <script>
+        window.onload = function() {
+            function changeStyle(elem, num, val) {
+                elem.style[num] = val;
+            }
+
+            var bts = document.getElementsByTagName("input");
+            var Div = document.getElementById("box");
+            var set = ["width", "height", "background", "display", "display"];
+            var valu = ["200px", "200px", "red", "none", "block"];
+            for (var i = 0; i < bts.length; i++) {
+                bts[i].index = i;
+                bts[i].onclick = function() {
+                    this.index == bts.length - 1 && (Div.style.cssText = "");
+                    changeStyle(Div, set[this.index], valu[this.index]);
+                }
+            }
+        };
+    </script>
+</body>
+
+</html>

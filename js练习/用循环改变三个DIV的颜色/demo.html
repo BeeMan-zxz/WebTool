@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .ai {
+            width: 200px;
+            margin: 0 auto;
+        }
+        
+        .set {
+            width: 330px;
+            height: 100px;
+            margin: 10px auto;
+        }
+        
+        .set div {
+            width: 100px;
+            height: 100px;
+            background: #000;
+            margin: 0 5px;
+            float: left;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var Bt = document.getElementsByTagName("input")[0];
+            var Divs = document.getElementById("set").getElementsByTagName("div");
+            Bt.onclick = function() {
+                for (var i = 0; i < Divs.length; i++) {
+                    Divs[i].style.background = "red";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="ai"><input type="button" value="点击将DIV变成红色"></div>
+        <div class="set" id="set">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>

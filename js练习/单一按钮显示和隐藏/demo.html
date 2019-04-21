@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,
+        .box_bt,
+        li,
+        ul {
+            margin: 0;
+            padding: 0;
+            font: 12px/1.5 Tahoma;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .box {
+            width: 200px;
+            margin: 10px auto;
+            border: 1px solid #424242;
+        }
+        
+        .box_bt {
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid white;
+            background: #ced3d7;
+            padding-left: 10px;
+        }
+        
+        ul {
+            /* display: inline-block; */
+            background: #eee;
+            color: #6b7980;
+            padding-left: 10px;
+        }
+        
+        ul li a {
+            color: #6b7980;
+        }
+        
+        li {
+            display: block;
+            height: 25px;
+            line-height: 25px;
+        }
+        
+        li a:hover {
+            text-decoration: underline;
+        }
+        
+        .up {
+            float: right;
+            /* display: inline-block; */
+            margin: 13px 10px 10px 0;
+            width: 0;
+            height: 0;
+            border-top: 4px solid black;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+        }
+        
+        .down {
+            float: right;
+            /* display: inline-block; */
+            margin: 13px 10px 10px 0;
+            width: 0;
+            height: 0;
+            border-bottom: 4px solid black;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+        }
+        
+        #show {
+            display: block;
+        }
+        
+        #hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var oBt = document.getElementsByClassName("box_bt")[0];
+            var oBut = document.getElementById("but");
+            var oXx = document.getElementsByClassName("xxx")[0];
+            oBt.onclick = function() {
+                oBut.className = oBut.className == "up" ? "down" : "up";
+                oXx.id = oXx.id == "hidden" ? "show" : "hidden";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box_bt">
+            <span>播放列表...</span>
+            <span id="but" class="up"></span>
+        </div>
+        <ul class="xxx" id="hidden">
+            <li><a href="javascript:;">玩家之徒 - 蔡依林</a></li>
+            <li><a href="javascript:;">原谅我就是这样的女生 - 戴佩妮</a></li>
+            <li><a href="javascript:;">猜不透 - 丁当</a></li>
+            <li><a href="javascript:;">自导自演 - 周杰伦</a></li>
+            <li><a href="javascript:;">浪漫窝 - 弦子</a></li>
+            <li><a href="javascript:;">流年 - 王菲</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

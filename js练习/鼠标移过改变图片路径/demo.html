@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+        }
+        
+        #box {
+            width: 212px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 4px;
+            margin-top: 10px;
+            padding: 8px;
+            overflow: hidden;
+        }
+        /*         
+        .clearfloat {
+            clear: both;
+            height: 0;
+        } */
+        
+        li {
+            float: left;
+            padding: 0;
+            list-style: none;
+            margin: 3px 3px 0 0;
+            width: 50px;
+            height: 50px;
+        }
+        
+        li#first {
+            width: 156px;
+            height: 156px;
+        }
+        
+        img {
+            width: 50px;
+            height: 50px;
+            border: 0;
+            border-radius: 3px;
+        }
+        
+        #first img {
+            width: 156px;
+            height: 156px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var lis = document.getElementsByTagName("img");
+            var oDiv = document.getElementsByTagName("div")[0];
+            for (var i = 1; i < lis.length; i++) {
+                lis[i].onmouseover = function() {
+                    var img = new Image();
+                    img.src = lis[0].src = this.src.replace(/small/, "big");
+                    oDiv.style.display = "blcok";
+                    img.compelte ? oDiv.style.display = "none" : (lis[0].onload = function() {
+                        oDiv.style.display = "none"
+                    });
+                };
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <ul id="box">
+        <li id="first">
+            <img src="../img/big_1.jpg" alt="">
+            <div></div>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="../img/small_1.jpg"></img>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="../img/small_2.jpg"></img>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="../img/small_3.jpg"></img>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="../img/small_4.jpg"></img>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="../img/small_5.jpg"></img>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="../img/small_6.jpg"></img>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="../img/small_7.jpg"></img>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="../img/small_8.jpg"></img>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="../img/small_9.jpg"></img>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="../img/small_10.jpg"></img>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="../img/small_11.jpg"></img>
+            </a>
+        </li>
+        <!-- <div class="clearfloat"></div> -->
+    </ul>
+</body>
+
+</html>
